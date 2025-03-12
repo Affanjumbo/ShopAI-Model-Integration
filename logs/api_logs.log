@@ -1,0 +1,22 @@
+2025-03-10 23:19:11,659 - INFO - Starting Recommendation API...
+2025-03-10 23:19:11,675 - INFO - Model Loaded Successfully!
+2025-03-10 23:19:54,777 - INFO - Starting Recommendation API...
+2025-03-10 23:19:54,808 - INFO - Model Loaded Successfully!
+2025-03-10 23:20:01,784 - INFO - Root API endpoint accessed.
+2025-03-10 23:20:23,941 - INFO - Received recommendation request - User: U272, Top-K: 5
+2025-03-10 23:20:41,015 - INFO - Received recommendation request - User: U27, Top-K: 5
+2025-03-10 23:25:18,047 - INFO - Starting Recommendation API...
+2025-03-10 23:25:18,063 - INFO - Model Loaded Successfully!
+2025-03-10 23:25:29,914 - INFO - Starting Recommendation API...
+2025-03-10 23:25:29,930 - INFO - Model Loaded Successfully!
+2025-03-10 23:25:37,038 - INFO - Root API endpoint accessed.
+2025-03-10 23:26:10,222 - INFO - Received recommendation request - User: U2122, Top-K: 5
+2025-03-10 23:28:03,172 - INFO - Starting Recommendation API...
+2025-03-10 23:28:03,204 - INFO - Model Loaded Successfully!
+2025-03-10 23:28:12,769 - INFO - Starting Recommendation API...
+2025-03-10 23:28:12,800 - INFO - Model Loaded Successfully!
+2025-03-10 23:28:15,341 - INFO - Root API endpoint accessed.
+2025-03-10 23:28:42,442 - INFO - Received recommendation request - User: U2121, Top-K: 5
+2025-03-10 23:28:42,442 - INFO - Recommendations for User U2121: []
+2025-03-10 23:29:18,903 - INFO - Received recommendation request - User: U261, Top-K: 5
+2025-03-10 23:29:18,906 - INFO - Recommendations for User U261: []
