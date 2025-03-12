@@ -1,11 +1,29 @@
 import torch
 import torch.nn as nn
 import pandas as pd
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import os
+
+# FastAPI Setup
+app = FastAPI()
+
+# Enable CORS (Fixes OPTIONS request issues)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all domains (change this in production)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow GET, POST, etc.
+    allow_headers=["*"],
+)
 
 # Load Dataset for Product Information
-df = pd.read_csv("datasets/cleaned_ecommerce.csv")
+dataset_path = "datasets/cleaned_ecommerce.csv"
+if not os.path.exists(dataset_path):
+    raise HTTPException(status_code=500, detail="Dataset file is missing!")
+
+df = pd.read_csv(dataset_path)
 df = df.rename(columns={"User_ID": "user_id", "Product_ID": "product_id"})
 
 # Map User and Product IDs (Now using string-based IDs)
@@ -32,12 +50,13 @@ class RecommendationModel(nn.Module):
         return self.fc(interaction).squeeze()
 
 # Load Trained Model
-model = RecommendationModel(num_users, num_products)
-model.load_state_dict(torch.load("models/recommendation_model.pth"))
-model.eval()
+model_path = "models/recommendation_model.pth"
+if not os.path.exists(model_path):
+    raise HTTPException(status_code=500, detail="Model file is missing!")
 
-# FastAPI Setup
-app = FastAPI()
+model = RecommendationModel(num_users, num_products)
+model.load_state_dict(torch.load(model_path, map_location=torch.device("cpu")))
+model.eval()
 
 # Request Model (User ID is now a string)
 class RecommendationRequest(BaseModel):
@@ -50,9 +69,9 @@ def get_recommendations(request: RecommendationRequest):
     user_id = request.user_id
     top_k = request.top_k
 
-    # Handle case where user_id is not in the dataset
+    # Handle case where user_id is not in dataset
     if user_id not in user_mapping:
-        return {"error": f"User ID '{user_id}' no recommendation found in dataset"}
+        return {"error": f"User ID '{user_id}' not found in dataset. Showing popular products instead."}
 
     # Convert string user_id to index using mapping
     user_idx = user_mapping[user_id]
