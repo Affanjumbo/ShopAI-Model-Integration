@@ -33,7 +33,7 @@ class RecommendationModel(nn.Module):
 
 # Load Trained Model
 model = RecommendationModel(num_users, num_products)
-model.load_state_dict(torch.load("F:/ShopAI-AI-Models/models/recommendation_model.pth"))
+model.load_state_dict(torch.load("models/recommendation_model.pth"))
 model.eval()
 
 # FastAPI Setup
