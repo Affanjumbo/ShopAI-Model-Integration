@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 # Load Dataset for Product Information
-df = pd.read_csv("F:/ShopAI-AI-Models/datasets/cleaned_ecommerce.csv")
+df = pd.read_csv("datasets/cleaned_ecommerce.csv")
 df = df.rename(columns={"User_ID": "user_id", "Product_ID": "product_id"})
 
 # Map User and Product IDs (Now using string-based IDs)
