@@ -17,4 +17,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 # 7️⃣ Run the FastAPI application
-CMD ["uvicorn", "recommendation_api:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "models.recommendation_api:app", "--host", "0.0.0.0", "--port", "8000"]
