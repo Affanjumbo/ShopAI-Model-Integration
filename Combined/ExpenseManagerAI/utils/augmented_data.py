@@ -19,5 +19,5 @@ def generate_purchases(user_id, num_purchases=5):
 
 augmented_data = pd.concat([generate_purchases(uid, random.randint(5, 20)) for uid in data["User_ID"].unique()])
 
-augmented_data.to_csv("ExpenseManagerAI/datasets/augmented_ecommerce_data.csv", index=False)
+augmented_data.to_csv("Combined/ExpenseManagerAI/datasets/augmented_ecommerce_data.csv", index=False)
 print("Augmentation is done")

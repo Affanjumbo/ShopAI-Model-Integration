@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load dataset
-data = pd.read_csv("ExpenseManagerAI/datasets/augmented_ecommerce_data.csv")
+data = pd.read_csv("Combined/ExpenseManagerAI/datasets/augmented_ecommerce_data.csv")
 
 # Convert purchase date to datetime format
 data["Purchase_Date"] = pd.to_datetime(data["Purchase_Date"])

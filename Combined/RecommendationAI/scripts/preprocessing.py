@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 
 # Load the cleaned datasets
-ecom_df = pd.read_csv(r"RecommendationAI/datasets/cleaned_ecommerce.csv")
+ecom_df = pd.read_csv(r"Combined/RecommendationAI/datasets/cleaned_ecommerce.csv")
 supermarket_df = pd.read_csv(r"RecommendationAI/datasets/cleaned_supermarket.csv")
 
 # Encoding categorical features

@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load purchase data
-data = pd.read_csv("ExpenseManagerAI/datasets/augmented_ecommerce_data.csv")
+data = pd.read_csv("Combined/ExpenseManagerAI/datasets/augmented_ecommerce_data.csv")
 data["Purchase_Date"] = pd.to_datetime(data["Purchase_Date"])
 
 # Helper function to calculate category spending patterns

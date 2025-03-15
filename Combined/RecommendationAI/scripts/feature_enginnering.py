@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 # Paths to input and output files
-ecom_file = "RecommendationAI/datasets/cleaned_ecommerce.csv"
+ecom_file = "Combined/RecommendationAI/datasets/cleaned_ecommerce.csv"
 supermarket_file = "RecommendationAI/datasets/cleaned_supermarket.csv"
 
 output_ecom_train = "RecommendationAI/datasets/ecommerce_train.csv"

@@ -1,7 +1,7 @@
 import torch
 
 # Load the saved model
-model_path = "RecommendationAI/models/recommendation_model.pth"
+model_path = "Combined/RecommendationAI/models/recommendation_model.pth"
 model_data = torch.load(model_path, map_location=torch.device('cpu'))
 
 # Print the structure of the saved data

@@ -21,7 +21,7 @@ class RecommendationModel(nn.Module):
 # Load Dataset
 def load_data():
     try:
-        df = pd.read_csv("RecommendationAI/datasets/cleaned_ecommerce.csv")
+        df = pd.read_csv("Combined/RecommendationAI/datasets/cleaned_ecommerce.csv")
         print("✅ Data loaded successfully.")
 
         # Rename Columns to Standardized Names
@@ -72,7 +72,7 @@ def train_and_save_model():
         print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}")
 
     # Save Model
-    torch.save(model.state_dict(), "RecommendationAI/models/recommendation_model.pth")
+    torch.save(model.state_dict(), "Combined/RecommendationAI/models/recommendation_model.pth")
     print("✅ Model saved successfully.")
 
 if __name__ == "__main__":

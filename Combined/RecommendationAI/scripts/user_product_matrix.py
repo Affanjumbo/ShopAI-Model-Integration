@@ -3,7 +3,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
 # Load cleaned datasets
-ecom_df = pd.read_csv("RecommendationAI/datasets/cleaned_ecommerce.csv")
+ecom_df = pd.read_csv("Combined/RecommendationAI/datasets/cleaned_ecommerce.csv")
 supermarket_df = pd.read_csv("RecommendationAI/datasets/cleaned_supermarket.csv")
 
 # 🛒 Step 1: Build User-Product Interaction Matrix

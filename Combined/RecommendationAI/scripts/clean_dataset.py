@@ -28,7 +28,7 @@ supermarket_df["Date"] = pd.to_datetime(supermarket_df["Date"], format='mixed', 
 supermarket_df.drop(columns=["Branch"], inplace=True)  # Remove 'Branch' column
 
 # **Save the cleaned datasets**
-ecom_df.to_csv("RecommendationAI/datasets/cleaned_ecommerce.csv", index=False)
+ecom_df.to_csv("Combined/RecommendationAI/datasets/cleaned_ecommerce.csv", index=False)
 supermarket_df.to_csv("RecommendationAI/datasets/cleaned_supermarket.csv", index=False)
 
 print("Datasets cleaned and saved successfully!")

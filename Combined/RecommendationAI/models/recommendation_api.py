@@ -19,7 +19,7 @@ app.add_middleware(
 )
 
 # Load dataset
-dataset_path = "RecommendationAI/datasets/cleaned_ecommerce.csv"
+dataset_path = "Combined/RecommendationAI/datasets/cleaned_ecommerce.csv"
 if not os.path.exists(dataset_path):
     raise FileNotFoundError(f"Dataset file not found: {dataset_path}")
 
@@ -49,7 +49,7 @@ class RecommendationModel(nn.Module):
         return self.fc(interaction).squeeze()
 
 # Load trained model
-model_path = "RecommendationAI/models/recommendation_model.pth"
+model_path = "Combined/RecommendationAI/models/recommendation_model.pth"
 if not os.path.exists(model_path):
     raise FileNotFoundError(f"Model file not found: {model_path}")
 
